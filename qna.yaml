@@ -1,0 +1,53 @@
+version: 2
+task_description: 'Teach the model about Intel® Gaudi® 3 AI Accelerator'
+created_by: chaitanya1731
+domain: Technology
+seed_examples:
+  - question: What is Intel® Gaudi® 3 AI Accelerator and what type of AI workloads it can handle?
+    answer: |
+      Intel® Gaudi® 3 AI Accelerator is the next generation AI accelerator from Intel and Habana Labs.
+      The Intel® Gaudi® 3 accelerator was designed to provide state-of-the-art datacenter performance
+      for all AI workloads, from generative applications such as large language models (LLMs) and
+      diffusion models (image generation such as Stable Diffusion) to standard object recognition,
+      classification, and voice dubbing.
+  - question: |
+      What is the primary architectural advancement in the Intel® Gaudi® 3 AI accelerator
+      compared to its predecessor Intel® Gaudi® 2 AI accelerator?
+    answer: |
+      The Intel® Gaudi® 3 AI accelerator advances from the Intel® Gaudi® 2 accelerator's
+      7nm process to a 5nm process, providing improved area density and power efficiency.
+  - question: What are the two main compute engines of Intel® Gaudi® 3 accelerator?
+    answer: |
+      The Intel® Gaudi® 3 accelerator features two main compute engines:
+      the Matrix Multiplication Engine (MME), responsible for operations like fully connected layers and convolutions,
+      and the Tensor Processor Core (TPC) cluster, which accelerates non-GEMM deep learning operations.
+  - question: What are the main components of Intel® Gaudi® 3 AI accelerator?
+    answer: |
+      Intel® Gaudi® 3 AI accelerator includes - PCIe Gen5 X16 port, a Scheduling and Synchronization Unit,
+      8 Matrix Multiplication Engines (MMEs), 64 Tensor Processor Cores (TPCs), 14 Media Decoder Engines (DECs),
+      4 Rotator Engines (ROT), 24 Network ports with an RDMA Engine, 96 MB of L2 Cache, and 128 GB of HBM2e memory.
+  - question: How much SRAM is on a Intel Gaudi 3 accelerator?
+    answer: Each Gaudi 3 accelerator has 96MB of on die SRAM
+  - question: How much memory does each Intel® Gaudi® 3 processor have?
+    answer: |
+      The Intel® Gaudi® 3  chip has two types of memory.
+      There is 128GB of HBM memory within the package that has a bandwidth of 3.7 TB/s
+      and also has 96 MB of SRAM memory that is on-die and is 12.8 TB/s.
+  - question: What kind of PCIe bus does an Intel® Gaudi® 3 use?
+    answer: |
+      Each Intel® Gaudi® 3 processor uses a PCIe Gen5 x16 bus which has a theoretical bandwidth of 63.04 GB/s
+      which is double the bandwidth of the previous generation.
+      It uses a Dual-slot PCIe that is full height and 10.5” in length.
+  - question: How many media decoders does an Intel® Gaudi® 3 have?
+    answer: |
+      The Intel® Gaudi® 3 increases its media decoders from 8 in the previous generation to 14 in the Intel® Gaudi® 3 generation. 
+      There are 14 total media decoders. 
+      For video, each media decoder is capable of HEVC with up to 10 profiles at a max resolution of 8192x8192. 
+      The media decoders are also capable of a Progressive H.264 & SVC base layer & MVC up to 4096x4096 resolution. 
+      The Intel® Gaudi 3® media decoders also support the VP9 profile up to profile 2 (10-bit) at a max resolution of 8192x8192. 
+      For the image formats it is capable of JPEG and Progressive JPEG up to an 8192x8192 resolution.
+document:
+  repo: https://github.com/chaitanya1731/intel-gaudi3.git
+  commit: 7b180c14a7ff22d51f58fb7ec897028b56be77d7
+  patterns:
+    - Intel-Gaudi3-Knowledge.md
