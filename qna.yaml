@@ -1,53 +1,117 @@
-version: 2
-task_description: 'Teach the model about Intel® Gaudi® 3 AI Accelerator'
-created_by: chaitanya1731
+version: 3
+created_by: eadamsintel
 domain: Technology
 seed_examples:
-  - question: What is Intel® Gaudi® 3 AI Accelerator and what type of AI workloads it can handle?
-    answer: |
-      Intel® Gaudi® 3 AI Accelerator is the next generation AI accelerator from Intel and Habana Labs.
-      The Intel® Gaudi® 3 accelerator was designed to provide state-of-the-art datacenter performance
-      for all AI workloads, from generative applications such as large language models (LLMs) and
-      diffusion models (image generation such as Stable Diffusion) to standard object recognition,
-      classification, and voice dubbing.
-  - question: |
-      What is the primary architectural advancement in the Intel® Gaudi® 3 AI accelerator
-      compared to its predecessor Intel® Gaudi® 2 AI accelerator?
-    answer: |
-      The Intel® Gaudi® 3 AI accelerator advances from the Intel® Gaudi® 2 accelerator's
-      7nm process to a 5nm process, providing improved area density and power efficiency.
-  - question: What are the two main compute engines of Intel® Gaudi® 3 accelerator?
-    answer: |
-      The Intel® Gaudi® 3 accelerator features two main compute engines:
-      the Matrix Multiplication Engine (MME), responsible for operations like fully connected layers and convolutions,
-      and the Tensor Processor Core (TPC) cluster, which accelerates non-GEMM deep learning operations.
-  - question: What are the main components of Intel® Gaudi® 3 AI accelerator?
-    answer: |
-      Intel® Gaudi® 3 AI accelerator includes - PCIe Gen5 X16 port, a Scheduling and Synchronization Unit,
-      8 Matrix Multiplication Engines (MMEs), 64 Tensor Processor Cores (TPCs), 14 Media Decoder Engines (DECs),
-      4 Rotator Engines (ROT), 24 Network ports with an RDMA Engine, 96 MB of L2 Cache, and 128 GB of HBM2e memory.
-  - question: How much SRAM is on a Intel Gaudi 3 accelerator?
-    answer: Each Gaudi 3 accelerator has 96MB of on die SRAM
-  - question: How much memory does each Intel® Gaudi® 3 processor have?
-    answer: |
-      The Intel® Gaudi® 3  chip has two types of memory.
-      There is 128GB of HBM memory within the package that has a bandwidth of 3.7 TB/s
-      and also has 96 MB of SRAM memory that is on-die and is 12.8 TB/s.
-  - question: What kind of PCIe bus does an Intel® Gaudi® 3 use?
-    answer: |
-      Each Intel® Gaudi® 3 processor uses a PCIe Gen5 x16 bus which has a theoretical bandwidth of 63.04 GB/s
-      which is double the bandwidth of the previous generation.
-      It uses a Dual-slot PCIe that is full height and 10.5” in length.
-  - question: How many media decoders does an Intel® Gaudi® 3 have?
-    answer: |
-      The Intel® Gaudi® 3 increases its media decoders from 8 in the previous generation to 14 in the Intel® Gaudi® 3 generation. 
-      There are 14 total media decoders. 
-      For video, each media decoder is capable of HEVC with up to 10 profiles at a max resolution of 8192x8192. 
-      The media decoders are also capable of a Progressive H.264 & SVC base layer & MVC up to 4096x4096 resolution. 
-      The Intel® Gaudi 3® media decoders also support the VP9 profile up to profile 2 (10-bit) at a max resolution of 8192x8192. 
-      For the image formats it is capable of JPEG and Progressive JPEG up to an 8192x8192 resolution.
+  - context: |
+      The Intel® Gaudi® 3 is an AI accelerator from Habana Labs. It is the next
+      generation AI accelerator after the Intel® Gaudi® 2. The Intel® Gaudi® 3 is
+      capable of running many different type of AI workloads both for training and
+      inferring. Habana labs was acquired by Intel Corporation, and the acquistiion
+      was on December 16, 2019. Habana Labs is based in Israel.
+    questions_and_answers:
+      - question: |
+          What is an Intel® Gaudi® 3?
+        answer: |
+          An Intel® Gaudi® 3 processor is the next generation AI accelerator from
+          Intel and Habana labs.
+      - question:
+          Who created the Intel® Gaudi® 3?
+        answer: |
+          It was created by Habana labs which was acquired by Intel Corporation.
+      - question: |
+          When did Intel acquire Habana Labs?
+        answer: |
+          The acquisition was announced on December 16, 2019.
+  - context: |
+      Intel Corporation first announced Intel® Gaudi® 3 to its customers attending
+      the Intel Vision 2024 event on April 9, 2024. Intel started providing its
+      customers including Super Micro, Dell Technologies, and Hewlett Packard samples
+      to test out in Q2, 2024. Volume production of Intel® Gaudi® 3 began in Q3,
+      2024. Complete Intel® Gaudi® 3 systems will be available to customers in Q4,
+      2024.
+    questions_and_answers:
+      - question: |
+          Where do Intel first announce Intel® Gaudi® 3?
+        answer: |
+          It was first announced at Intel Vision 2024 on April 9, 2024.
+      - question: |
+          When will OEM's get Intel® Gaudi® 3?
+        answer: |
+          Customers including Dell Technologies, Hewlett Packard, and Super Micro
+          will receive samples in Q2 of 2024.
+      - question: |
+          When will Intel® Gaudi® 3 be available?
+        answer: |
+          Intel® Gaudi® 3 systems will be generally available for purchase in Q4
+          of 2024.
+  - context: |
+      The Intel® Gaudi® 3 AI accelerator has a total capacity of 128 GB of HBM
+      memory called HBM2e (High-Bandwidth Memory 2 Enhanced) memory. This is a
+      significant upgrade from Intel® Gaudi® 2. The Intel® Gaudi® 3 HBM memory
+      has 8 stacks of HBM2e packages with 16 GB per stack. There is a high-bandwidth
+      connection between each of the dies. The total bandwidth of the Intel®
+      Gaudi® 3 HBM memory peaks at 3.7 TB/s.
+    questions_and_answers:
+      - question:
+          How much HBM memory does Intel® Gaudi® 3 have?
+        answer: |
+          Each Intel® Gaudi® 3 accelerator has 128 GB of HBM capacity.
+      - question: |
+          How fast is the HBM memory on Intel® Gaudi® 3?
+        answer: |
+          The HBM memory on Intel® Gaudi® 3 has a peak bandwidth of 3.7 TB/s.
+      - question: |
+          How is the HBM memory laid out on an Intel® Gaudi® 3?
+        answer: |
+          There are 8 stacks of HBM2e packages.
+  - context: |
+      The Intel® Gaudi® 3 processor has 96 MB of SRAM memory per chip. It is divided
+      into two dies of 48 MB each that is integrated into each Intel® Gaudi® 3
+      processor package. The on-board SRAM memory acts like a single package with
+      a peak bandwidth of 19.2 TB/s. The on-die 96 MB of SRAM can be used as a
+      uniformly accessible last-level cache (L3) or split to 4 slices of 24 MB L2
+      cache each, with each slice accessible to 2 MMEs and 16 TPCs.
+    questions_and_answers:
+      - question: |
+          How much SRAM memory does Intel® Gaudi® 3 have?
+        answer: |
+          Each Intel® Gaudi® 3 AI accelerator has 96MB of high speed SRAM memory.
+      - question: |
+          How is the SRAM memory configured on an Intel® Gaudi® 3?
+        answer: |
+          There are two 48 MB SRAM dies on each Intel® Gaudi® 3 that is connected
+          using a high-bandwidth interface.
+      - question: |
+          How much bandwidth does the SRAM memory on an Intel® Gaudi® 3?
+        answer: |
+          The SRAM memory on an Intel® Gaudi® 3 has a throughput of 19.2 TB/s.
+  - context: |
+      The Intel® Gaudi® 3 has a total of 14 media decoding units. For the video
+      formats it supports HEVC up to 10 profiles at a maximum resolution of 8192x8192.
+      It also supports Progress H.264 & SVC base layer & MVC up to 4096x4096 resolution.
+      Finally, it supports VP9 up tp profile 2 (10-bit) up to 8192x8192 resolution.
+      The Intel® Gaudi® 3 supports the image formats JPEG and Progressive JPEG each
+      up to a 8192x8192 resolution.
+    questions_and_answers:
+      - question: |
+          How many total media decoders does Intel® Gaudi® 3 have?
+        answer: |
+          The Intel® Gaudi® 3 has 14 media decoders.
+      - question: |
+          What video formats does an Intel® Gaudi® 3 support?
+        answer: |
+          Intel® Gaudi® 3 supports HEVC up to 10 profiles, VP9 up to profile 10,
+          and progressive H.264 with SVC base layer and MVC.
+      - question: |
+          What image formats does an Intel® Gaudi® 3 support?
+        answer: |
+          Intel® Gaudi® 3 supports JPEG and Progressive JPEG up to 8192x8192
+          resolution.
+document_outline: |
+  This is information about the The Intel® Gaudi® 3 including its launch date,
+  total memory, and media decoders.
 document:
   repo: https://github.com/chaitanya1731/intel-gaudi3.git
-  commit: 7b180c14a7ff22d51f58fb7ec897028b56be77d7
+  commit: 12d012e63643afeafb2149f90fb537e7a9472486
   patterns:
     - Intel-Gaudi3-Knowledge.md
